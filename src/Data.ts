@@ -3,7 +3,8 @@
 // src/data/sourceData.ts    <img src="https://rengatrading.com/bull/images/contact-us-banner.jpg" alt="Contact Us" className="w-full h-[300px] object-cover" />
 
 import type { source } from "./Models/Model";
-const serverurl = "http://localhost"; // Adjust the URL as needed
+//const serverurl = "http://localhost"; // Adjust the URL as needed
+const serverurl = "https://rengatrading.com/bull/images";
 export const sourceData: source = {
     logo: {
         bullLogo: serverurl+"/bull-machine-logo.png",

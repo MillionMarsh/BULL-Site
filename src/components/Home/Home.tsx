@@ -383,6 +383,12 @@ function FnConstructionEquipments() {
 
       </div>
       <div className="bg-[url(http://localhost/consequipment-bg.jpg)] bg-center bg-no-repeat bg-cover h-[425px]"> 
+        <img
+          src="https://rengatrading.com/bull/images/products/sd76-bs4-super-smart.png"
+          alt="Construction Equipments Background"
+          //className="w-full h-full object-cover opacity-50" 
+          className="mx-auto block  object-cover " 
+        />
       </div>
     </div> 
   )
@@ -535,7 +541,7 @@ function FnCustomerTestimonial() {
           <SwiperSlide>
             <div className="flex flex-col items-center px-4">
               <img
-                src="IMAGE_URL_1"
+                src="https://rengatrading.com/bull/images/products/product-sd76-bs4.png"
                 alt="SD76 - BS5 SUPER SMART"
                 className="h-40 object-contain mb-4"
               />
@@ -549,7 +555,7 @@ function FnCustomerTestimonial() {
           <SwiperSlide>
             <div className="flex flex-col items-center px-4">
               <img
-                src="IMAGE_URL_2"
+                src="https://rengatrading.com/bull/images/products/bull-loader-hd76-sm.png"
                 alt="BULL LOADER HD76"
                 className="h-40 object-contain mb-4"
               />
@@ -563,7 +569,7 @@ function FnCustomerTestimonial() {
           <SwiperSlide>
             <div className="flex flex-col items-center px-4">
               <img
-                src="IMAGE_URL_3"
+                src="https://rengatrading.com/bull/images/products/skid-stree-sm.png"
                 alt="BULL SKID STEER AV490"
                 className="h-40 object-contain mb-4"
               />
