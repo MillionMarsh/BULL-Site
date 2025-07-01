@@ -1,9 +1,13 @@
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faYoutube, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { type source } from "../../Models/Model";
 
+interface FooterProps {
+  data: source;
+}
 
-const FooterComp = () => {
+const FooterComp = ({data}:FooterProps) => {
   return (
     <footer className="bg-[#1f1f1f] text-gray-300 px-10 py-10">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">

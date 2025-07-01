@@ -1,0 +1,14 @@
+/* Entire Swiper background */
+.my-swiper {
+  background-color: #ffffff;
+}
+
+/* Vertical lines between slides */
+.my-swiper .swiper-slide {
+  border-right: 2px solid #e5e7eb; /* Tailwind gray-300 */
+}
+
+/* Remove border on last slide */
+.my-swiper .swiper-slide:last-child {
+  border-right: none;
+}
