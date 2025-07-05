@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './NavBar.css'
-import { type logo, type source } from "../../Models/Model";
+import { type source } from "../../Models/Model";
 
 interface LogoProps {
   data: source;
@@ -14,9 +14,7 @@ const NavbarComp = ({data}: LogoProps) => {
 
   {/* Bull Logo */}
   <div className="absolute top-4 left-2 z-20 flex mx-auto">
-    {/* <img src="http://localhost/bull-machine-logo.png" alt="Bull" className="h-10" /> */}
     <img src={data.logo.bullLogo} alt="Bull" className="h-10" />
-    {/* <span className="text-3xl font-bold text-red-600">BULL</span> */}
   </div>
 
   {/* Arasan Logo */}
@@ -46,7 +44,8 @@ const NavbarComp = ({data}: LogoProps) => {
   </div></div>
 
   {/* Top Info Bar - centered content */}
-  <div className="hidden md:block w-3/4 mx-auto bg-[#838282] text-white text-sm font-semibold px-8 py-2 relative z-10 polygon-top transform translate-x-[30px]">
+  <div className="hidden md:block">
+  <div className=" w-2/3 mx-auto bg-[#838282] text-white text-sm font-semibold px-8 py-2 relative z-10 polygon-top transform translate-x-[30px]">
     <div className="flex justify-center items-center space-x-6">
       <span>ABOUT US</span>
       <span>MEDIA</span>
@@ -57,7 +56,7 @@ const NavbarComp = ({data}: LogoProps) => {
   </div>
 
   {/* Navbar - centered content */}
-  <div className="hidden md:block w-3/4 mx-auto bg-[#414141] text-white px-10 py-3 relative z-10 polygon-top transform -translate-x-[30px]">
+  <div className="w-2/3 mx-auto bg-[#414141] text-white px-10 py-3 relative z-10 polygon-top transform -translate-x-[30px]">
     <div className="flex justify-center items-center space-x-8 text-sm font-semibold">
 
       <Link to="/" className="hover:text-yellow-400">HOME</Link>
@@ -71,6 +70,7 @@ const NavbarComp = ({data}: LogoProps) => {
       <Link to="/contact" className="hover:text-yellow-400">CONTACT US</Link>
 
     </div>
+  </div>
   </div>
   <hr />
 </div>

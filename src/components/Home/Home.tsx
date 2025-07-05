@@ -44,124 +44,7 @@ const stats = [
     },
 ];
 
-const videos = [ 
-  {
-    id: 1,
-    thumbnail: "http://localhost/videos/abid-ansari-testimonial.webp",
-    youtubeId: "abc123",
-  },
-  {
-    id: 2,
-    thumbnail: "http://localhost/videos/videos/bull-backhoe-fastest-growing-backhoe-loader-manufacturer.webp",
-    youtubeId: "def456",
-  },
-  {
-    id: 3,
-    thumbnail: "http://localhost/videos/bull-grandia-leading-the-way-with-unmatched-power.webp",
-    youtubeId: "ghi789",
-  },
-  {
-    id: 4,
-    thumbnail: "http://localhost/videos/bull-machines-moves-70-backhoes-by-train.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 5,
-    thumbnail: "http://localhost/videos/bull-machines-video-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 6,
-    thumbnail: "http://localhost/videos/bull-testimonial-kannada-1.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 7,
-    thumbnail: "http://localhost/videos/bull-testimonial-kannada-2.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 8,
-    thumbnail: "http://localhost/videos/bull-testimonial-kannada-3.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 9,
-    thumbnail: "http://localhost/videos/bull-testimonial-kannada-4.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 10,
-    thumbnail: "http://localhost/videos/bull-testimonial-kannada-5.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 11,
-    thumbnail: "http://localhost/videos/dhulaji-biru-karpe-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 12,
-    thumbnail: "http://localhost/videos/jasvir-singh-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 13,
-    thumbnail: "http://localhost/videos/jitendra-more-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 14,
-    thumbnail: "http://localhost/videos/karthik-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 15,
-    thumbnail: "http://localhost/videos/mahadev-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 16,
-    thumbnail: "http://localhost/videos/moorthi-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 17,
-    thumbnail: "http://localhost/videos/ram-roy-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 18,
-    thumbnail: "http://localhost/videos/sandeep-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 19,
-    thumbnail: "http://localhost/videos/selvamani-testiomonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 20,
-    thumbnail: "http://localhost/videos/shivabalan-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 21,
-    thumbnail: "http://localhost/videos/shrikrishna-prabhakar-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 22,
-    thumbnail: "http://localhost/videos/vigneshwaran-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  {
-    id: 23,
-    thumbnail: "http://localhost/videos/vijay-itkar-testimonial.webp",
-    youtubeId: "xyz101",
-  },
-  
-];
+
 
 const news = [
   {
@@ -215,7 +98,7 @@ function FnBanner({ data }: HomeProps) {
   }, [activeBanners.length]);
 
   return (
-    <div className="relative h-[80vh] md:h-[90vh] overflow-hidden">
+    <div className="relative overflow-hidden">
       <div className="relative h-full w-full">
         {activeBanners.map((banner, idx) => (
           <div
@@ -224,10 +107,10 @@ function FnBanner({ data }: HomeProps) {
           >
             <img
               src={banner.image}
-              className="absolute block w-full h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              // className="absolute block w-full h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               alt={banner.altText}
             />
-            <div className="absolute bottom-10 left-10 text-white">
+            {/* <div className="absolute bottom-10 left-10 text-white">
               <h2 className="text-3xl font-bold">{banner.title}</h2>
               <p className="mt-2">{banner.description}</p>
               <a
@@ -236,7 +119,7 @@ function FnBanner({ data }: HomeProps) {
               >
                 {banner.buttonText}
               </a>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
@@ -330,7 +213,10 @@ function FnResCount() {
     </div>
   )
 }
-function FnInnovation() {
+
+function FnInnovation({ data }: HomeProps) {
+  const [playVideo, setPlayVideo] = useState(false);
+
   return (
     <div className="bg-[#1f1f1f] py-12 px-4 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -351,21 +237,46 @@ function FnInnovation() {
         
         {/* Right Video/Image */}
         <div className="w-full">
-          <iframe
-            className="w-full aspect-video"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ  https://www.youtube.com/2ce8eeb5-777f-4c67-aa2f-812dd278c0a6"
-            title="Bull Machines Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <div className="w-full aspect-video relative">
+            {playVideo ? (
+              <iframe
+                className="w-full h-full absolute inset-0"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                title="Bull Machines Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <>
+                <img
+                  src={data.img.country} // replace with your custom thumbnail
+                  alt="Bull Machines Thumbnail"
+                  className="w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setPlayVideo(true)}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-16 w-16 text-white bg-black/60 rounded-full p-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </>
+            )}
+          </div>
         </div>
-
       </div>
     </div>
-  )
+  );
 }
-function FnConstructionEquipments() {
+
+function FnConstructionEquipments({ data }: HomeProps) {
   return (
     <div>  
       
@@ -382,9 +293,10 @@ function FnConstructionEquipments() {
         </p>
 
       </div>
-      <div className="bg-[url(http://localhost/consequipment-bg.jpg)] bg-center bg-no-repeat bg-cover h-[425px]"> 
+      <div style={{ backgroundImage: `url(${data.img.conecpbg})` }}
+  className="bg-center bg-no-repeat bg-cover h-[425px]"> 
         <img
-          src="https://rengatrading.com/bull/images/products/sd76-bs4-super-smart.png"
+          src={data.img.consEcp}
           alt="Construction Equipments Background"
           //className="w-full h-full object-cover opacity-50" 
           className="mx-auto block  object-cover " 
@@ -393,7 +305,7 @@ function FnConstructionEquipments() {
     </div> 
   )
 }
-function Carousel() {
+function Carousel({data}: HomeProps) {
   return (
     <>
        <Swiper
@@ -436,7 +348,7 @@ function Carousel() {
       }}
       className="w-full h-[250px] md:h-[350px] lg:h-[500px]"
     >
-      {videos.map((video) => (
+      {data.videos.map((video) => (
         <SwiperSlide key={video.id}>
           <div
             onClick={() => window.open(`https://www.youtube.com/shorts/${video.youtubeId}`, '_blank')}
@@ -523,7 +435,7 @@ function NewsAndUpdates(){
     </div>
    )
 }
-function FnCustomerTestimonial() {
+function FnCustomerTestimonial({data}:HomeProps) {
   return ( 
     <div className="bg-[#F0F0F0]  px-4 md:px-12">
         <div className="container bg-[#EAEAEA] py-8 mx-w-7xl mx-auto px-20 md:px-12">
@@ -541,7 +453,7 @@ function FnCustomerTestimonial() {
           <SwiperSlide>
             <div className="flex flex-col items-center px-4">
               <img
-                src="https://rengatrading.com/bull/images/products/product-sd76-bs4.png"
+                src={data.img.sd76}
                 alt="SD76 - BS5 SUPER SMART"
                 className="h-40 object-contain mb-4"
               />
@@ -555,7 +467,7 @@ function FnCustomerTestimonial() {
           <SwiperSlide>
             <div className="flex flex-col items-center px-4">
               <img
-                src="https://rengatrading.com/bull/images/products/bull-loader-hd76-sm.png"
+                src={data.img.hd76}
                 alt="BULL LOADER HD76"
                 className="h-40 object-contain mb-4"
               />
@@ -569,7 +481,7 @@ function FnCustomerTestimonial() {
           <SwiperSlide>
             <div className="flex flex-col items-center px-4">
               <img
-                src="https://rengatrading.com/bull/images/products/skid-stree-sm.png"
+                src={data.img.av490}
                 alt="BULL SKID STEER AV490"
                 className="h-40 object-contain mb-4"
               />
@@ -585,7 +497,7 @@ function FnCustomerTestimonial() {
           <h2 className="text-black text-2xl md:text-3xl font-extrabold leading-tight text-center md:text-right md:min-w-[200px] mx-auto my-20" >SUCCESSFUL CUSTOMERS TESTIMONIAL</h2>
         </div>
 
-          <Carousel />
+          <Carousel data={data}/>
           <NewsAndUpdates/>
           {/* <FnVideoCarousel /> */}
       </div>
@@ -603,11 +515,11 @@ const Home = ({ data }: HomeProps) => {
 
     <FnResCount />
 
-    <FnInnovation />
+    <FnInnovation data={data}/>
 
-    <FnConstructionEquipments />
+    <FnConstructionEquipments data={data}/>
     
-    <FnCustomerTestimonial />
+    <FnCustomerTestimonial data={data}/>
     
     {/* <FnTest /> */}
 

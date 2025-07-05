@@ -72,8 +72,8 @@ const FooterComp = ({data}:FooterProps) => {
   <div className="border-t border-gray-600 mt-10 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
     <p>© 2025 All Rights Reserved Bull Machines</p>
     <div className="flex items-center space-x-2 mt-2 md:mt-0">
-      <img src="/bull-logo.png" alt="Bull Logo" className="h-6" />
-      <span className="text-red-600 font-bold text-base">BULL</span>
+      <img src={data.logo.bullLogo} alt="Bull Logo" className="h-6" />
+      {/* <span className="text-red-600 font-bold text-base">BULL</span> */}
     </div>
   </div>
 </footer>
